@@ -20,13 +20,13 @@ return new class extends Migration {
 
         DB::table('motorcycles')->insert([
             [
-                "name" => "Ducati",
+                "name" => "Ducati 872",
                 "price" => 23000,
                 "created_at" => NOW(),
                 "updated_at" => NOW()
             ],
             [
-                "name" => "Peugeot",
+                "name" => "Kisbee 762",
                 "price" => 1100,
                 "created_at" => NOW(),
                 "updated_at" => NOW()

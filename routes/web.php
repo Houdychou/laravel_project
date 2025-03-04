@@ -8,13 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/motorcycle', function() {
-    $motorcycle = new MotorcycleController();
-    return view("motorcycle", ["motorcycles" => $motorcycle->selectAllMotorcycles()]);
-});
+Route::get('/motorcycle', [MotorcycleController::class, 'selectAllMotorcycles']);
 
-Route::get('/brand', function() {
-    $brandController = new BrandController();
-    return view("brand", ["brands" => $brandController->selectAllBrand()]);
-});
+Route::get('/brand', [BrandController::class, 'selectAllBrands']);
 

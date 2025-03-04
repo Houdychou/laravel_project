@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-
+use App\Models\Motorcycle;
 class MotorcycleController extends Controller
 {
     public function selectAllMotorcycles()
     {
-        return DB::select('SELECT * FROM motorcycles');
+        $motorcycles = Motorcycle::all();
+        return view('motorcycle', compact('motorcycles'));
     }
 }

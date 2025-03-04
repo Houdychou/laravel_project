@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Brand;
 class BrandController extends Controller
 {
-    public function selectAllBrand()
+    public function selectAllBrands()
     {
-       return DB::select('SELECT * FROM brand');
+        $brands = Brand::all();
+        return view('brand', compact('brands'));
     }
 }
