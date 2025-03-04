@@ -19,7 +19,7 @@
 <main class="container my-5">
     <h2 class="text-center mb-4">Liste des Marques</h2>
     <div class="table-responsive">
-        <table class="table table-striped table-hover text-center">
+        <table class="table table-hover text-center">
             <thead class="table-dark">
             <tr>
                 <th>#</th>
