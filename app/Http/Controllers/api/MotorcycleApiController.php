@@ -18,6 +18,6 @@ class MotorcycleApiController extends Controller
         if (!$motorcycleDetails) {
             abort(404);
         }
-        return view('motorcycle-details', compact('motorcycleDetails'));
+        return response()->json($motorcycleDetails);
     }
 }
