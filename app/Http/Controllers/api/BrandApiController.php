@@ -1,17 +1,18 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Brand;
-class BrandController extends Controller
+class BrandApiController extends Controller
 {
     public function selectAllBrands()
     {
         $brands = Brand::all();
-        return view('brand', compact('brands'));
+        return response()->json($brands);
     }
 
     public function selectBrandById($id) {
         $brandDetails = Brand::query()->find($id);
-        return view('brand-details', compact('brandDetails'));
+        return response()->json($brandDetails);
     }
 }

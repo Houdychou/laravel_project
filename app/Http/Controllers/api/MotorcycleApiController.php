@@ -1,14 +1,15 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Motorcycle;
 
-class MotorcycleController extends Controller
+class MotorcycleApiController extends Controller
 {
     public function selectAllMotorcycles()
     {
         $motorcycles = Motorcycle::all();
-        return view('motorcycle', compact('motorcycles'));
+        return response()->json($motorcycles);
     }
 
     public function selectMotorcycleById($id)
