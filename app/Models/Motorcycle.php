@@ -11,5 +11,13 @@ class Motorcycle extends Model
      *
      * @var string
      */
+
     protected $name = 'string';
+
+    /**
+     * The attributes that should be visible in arrays.
+     *
+     * @var integer
+     */
+    protected $price = 'integer';
 }

@@ -2,10 +2,11 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -20,6 +21,27 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insert([
+            [
+                "name" => "admin",
+                "email" => "admin@admin.com",
+                "password" => Hash::make("admin"),
+                "email_verified_at" => NOW(),
+                "remember_token" => bin2hex(random_bytes(5)),
+                "created_at" => NOW(),
+                "updated_at" => NOW()
+            ],
+            [
+                "name" => "user",
+                "email" => "user@user.com",
+                "password" => Hash::make("user"),
+                "email_verified_at" => NOW(),
+                "remember_token" => bin2hex(random_bytes(5)),
+                "created_at" => NOW(),
+                "updated_at" => NOW()
+            ]
+        ]);
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

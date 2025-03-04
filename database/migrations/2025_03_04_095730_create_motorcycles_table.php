@@ -20,16 +20,16 @@ return new class extends Migration {
 
         DB::table('motorcycles')->insert([
             [
-                'name' => 'Ducati 872',
-                'price' => 28000,
-                'created_at' => now(),
-                'updated_at' => now(),
+                "name" => "Ducati",
+                "price" => 23000,
+                "created_at" => NOW(),
+                "updated_at" => NOW()
             ],
             [
-                'name' => 'Kisbee 90',
-                'price' => 5000,
-                'created_at' => now(),
-                'updated_at' => now(),
+                "name" => "Peugeot",
+                "price" => 1100,
+                "created_at" => NOW(),
+                "updated_at" => NOW()
             ]
         ]);
     }

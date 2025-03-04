@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-
 class BrandController extends Controller
 {
-    public function index()
+    public function selectAllBrand()
     {
-        $brands = DB::select('SELECT * FROM brand');
-        return $brands;
+       return DB::select('SELECT * FROM brand');
     }
 }

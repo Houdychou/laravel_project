@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\DB;
 
 class MotorcycleController extends Controller
 {
-    public function index()
+    public function selectAllMotorcycles()
     {
-        $motorcycles = DB::select('SELECT * FROM motorcycles');
-        return view('motorcycle', ['motorcycles' => $motorcycles]);
+        return DB::select('SELECT * FROM motorcycles');
     }
 }

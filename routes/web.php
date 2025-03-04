@@ -10,12 +10,11 @@ Route::get('/', function () {
 
 Route::get('/motorcycle', function() {
     $motorcycle = new MotorcycleController();
-    return $motorcycle->index();
+    return view("motorcycle", ["motorcycles" => $motorcycle->selectAllMotorcycles()]);
 });
 
 Route::get('/brand', function() {
-    $brand = new BrandController();
-    return $brand->index();
-    return
+    $brandController = new BrandController();
+    return view("brand", ["brands" => $brandController->selectAllBrand()]);
 });
 

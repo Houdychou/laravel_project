@@ -18,18 +18,27 @@
 
 <main class="container my-5">
     <h2 class="text-center mb-4">Liste des Marques</h2>
-    <div class="row">
-        @foreach ($brands as $brand)
-            <div class="col">
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $brand->name }}</h5>
-                        <p class="card-text"><strong>Créé le :</strong> {{ $brand->created_at }}</p>
-                        <p class="card-text"><strong>Mis à jour le :</strong> {{ $brand->updated_at }}</p>
-                    </div>
-                </div>
-            </div>
-        @endforeach
+    <div class="table-responsive">
+        <table class="table table-striped table-hover text-center">
+            <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Créé le</th>
+                <th>Mis à jour le</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach ($brands as $brand)
+                <tr>
+                    <td>{{ $brand->id }}</td>
+                    <td>{{ $brand->name }}</td>
+                    <td>{{ $brand->created_at }}</td>
+                    <td>{{ $brand->updated_at }}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 </main>
 
