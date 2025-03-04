@@ -13,6 +13,9 @@ class BrandApiController extends Controller
 
     public function selectBrandById($id) {
         $brandDetails = Brand::query()->find($id);
+        if(!$brandDetails) {
+            return response()->json(["error" => "Brand not found"], 404);
+        }
         return response()->json($brandDetails);
     }
 }

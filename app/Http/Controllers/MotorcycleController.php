@@ -15,7 +15,7 @@ class MotorcycleController extends Controller
     {
         $motorcycleDetails = Motorcycle::query()->find($id);
         if (!$motorcycleDetails) {
-            abort(404);
+            abort(404)
         }
         return view('motorcycle-details', compact('motorcycleDetails'));
     }

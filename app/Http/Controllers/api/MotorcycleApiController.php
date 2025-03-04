@@ -16,7 +16,7 @@ class MotorcycleApiController extends Controller
     {
         $motorcycleDetails = Motorcycle::query()->find($id);
         if (!$motorcycleDetails) {
-            abort(404);
+            return response()->json(["error" => "Motorcycle not found"], 404);
         }
         return response()->json($motorcycleDetails);
     }
